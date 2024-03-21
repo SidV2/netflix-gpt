@@ -4,9 +4,7 @@ import appStore from "./utils/appStore";
 
 function App() {
   return (
-    <div>
-      dsdsd
-    </div>
+    <Body />
   );
 }
 
