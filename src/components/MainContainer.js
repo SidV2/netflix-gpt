@@ -1,2 +1,2 @@
-const MainContainer = () => {};
-export default MainContainer;
+const MainContainer = () => {}
+export default MainContainer

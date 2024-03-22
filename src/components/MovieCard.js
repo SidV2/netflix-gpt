@@ -1,2 +1,2 @@
-const MovieCard = () => {};
-export default MovieCard;
+const MovieCard = () => {}
+export default MovieCard

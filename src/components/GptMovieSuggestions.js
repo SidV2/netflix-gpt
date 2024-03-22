@@ -1,2 +1,2 @@
-const GptMovieSuggestions = () => {};
-export default GptMovieSuggestions;
+const GptMovieSuggestions = () => {}
+export default GptMovieSuggestions

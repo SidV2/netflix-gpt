@@ -1,2 +1,2 @@
-const VideoTitle = () => {};
-export default VideoTitle;
+const VideoTitle = () => {}
+export default VideoTitle

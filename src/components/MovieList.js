@@ -1,2 +1,2 @@
-const MovieList = () => {};
-export default MovieList;
+const MovieList = () => {}
+export default MovieList

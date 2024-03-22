@@ -1,3 +1,3 @@
-const useNowPlayingMovies = () => {};
+const useNowPlayingMovies = () => {}
 
-export default useNowPlayingMovies;
+export default useNowPlayingMovies

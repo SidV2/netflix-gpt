@@ -1,3 +1,3 @@
-const usePopularMovies = () => {};
+const usePopularMovies = () => {}
 
-export default usePopularMovies;
+export default usePopularMovies

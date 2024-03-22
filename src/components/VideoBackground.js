@@ -1,2 +1,2 @@
-const VideoBackground = () => {};
-export default VideoBackground;
+const VideoBackground = () => {}
+export default VideoBackground
