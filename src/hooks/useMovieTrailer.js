@@ -1,3 +1,3 @@
-const useMovieTrailer = () => {};
+const useMovieTrailer = () => {}
 
-export default useMovieTrailer;
+export default useMovieTrailer

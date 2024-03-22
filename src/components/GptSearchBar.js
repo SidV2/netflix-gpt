@@ -1,2 +1,2 @@
-const GptSearchBar = () => {};
-export default GptSearchBar;
+const GptSearchBar = () => {}
+export default GptSearchBar

@@ -1,2 +1,2 @@
-const GPTSearch = () => {};
-export default GPTSearch;
+const GPTSearch = () => {}
+export default GPTSearch
