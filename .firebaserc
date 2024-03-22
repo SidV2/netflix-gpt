@@ -1,1 +1,5 @@
-
+{
+  "projects": {
+    "default": "netflix-gpt-3846a"
+  }
+}
