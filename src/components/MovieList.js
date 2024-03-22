@@ -1,5 +1,2 @@
-import MovieCard from "./MovieCard";
-
-const MovieList = ({ title, movies }) => {
-};
+const MovieList = () => {};
 export default MovieList;
