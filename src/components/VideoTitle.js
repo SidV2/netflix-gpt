@@ -1,3 +1,2 @@
-const VideoTitle = ({ title, overview }) => {
-};
+const VideoTitle = () => {};
 export default VideoTitle;
