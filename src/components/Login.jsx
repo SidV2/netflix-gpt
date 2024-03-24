@@ -7,13 +7,16 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
+import { useDispatch } from "react-redux";
+import { addUser } from "../utils/userSlice";
 import { BG_URL, USER_AVATAR } from "../utils/constants";
-import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
-  //const dispatch = useDispatch();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const name = useRef(null);
   const email = useRef(null);
@@ -39,15 +42,15 @@ const Login = () => {
           })
             .then(() => {
               const { uid, email, displayName, photoURL } = auth.currentUser;
-              console.log(uid, email, displayName, photoURL);
-              // dispatch(
-              //   addUser({
-              //     uid: uid,
-              //     email: email,
-              //     displayName: displayName,
-              //     photoURL: photoURL,
-              //   })
-              // );
+              dispatch(
+                addUser({
+                  uid: uid,
+                  email: email,
+                  displayName: displayName,
+                  photoURL: photoURL,
+                })
+              );
+              navigate("/browse");
             })
             .catch((error) => {
               setErrorMessage(error.message);
@@ -68,7 +71,9 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          console.log(user);
+          const { uid, email, displayName, photoURL } = auth.currentUser;
+          dispatch(addUser({uid: uid, email: email, displayName: displayName, photoURL: photoURL}));
+          navigate("/browse");
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -85,7 +90,7 @@ const Login = () => {
     <div>
       <Header />
       <div className="absolute">
-        <img className="h-screen object-cover" src={BG_URL} alt="logo" />
+        <img className="h-screen w-screen object-cover" src={BG_URL} alt="logo" />
       </div>
       <form
         onSubmit={(e) => e.preventDefault()}
