@@ -8,14 +8,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 
-const Header = () => {
+const Header = ({ hideYouTubeControls = false }) => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const user = useSelector((store) => store.user);
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
-            if(user && user.uid) {
+            if (user && user.uid) {
                 const { uid, email, displayName, photoURL } = user;
                 dispatch(
                     addUser({
@@ -44,9 +44,9 @@ const Header = () => {
     }
 
     return (
-        <div className="w-screen absolute px-8 py-2 bg-gradient-to-b from-black z-10 flex flex-col md:flex-row justify-between">
+        <div className={`w-screen absolute px-8 py-2  z-10 flex flex-col md:flex-row justify-between ${hideYouTubeControls ? 'bg-black' : 'bg-gradient-to-b from-black'} `}>
             <img className="w-44 mx-auto md:mx-0" src={LOGO} alt="logo" />
-            {user && 
+            {user &&
                 <div className="flex p-2 p-2 justify-between">
                     <img
                         className="hidden md:block w-10 h-10"

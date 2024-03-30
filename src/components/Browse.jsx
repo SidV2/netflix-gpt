@@ -9,7 +9,7 @@ const Browse = () => {
 
     return (
         <>
-            <Header />
+            <Header hideYouTubeControls={true} />
             <MainContainer />
         </>
     )
