@@ -50,7 +50,6 @@ const Login = () => {
                   photoURL: photoURL,
                 })
               );
-              navigate("/browse");
             })
             .catch((error) => {
               setErrorMessage(error.message);
@@ -73,7 +72,6 @@ const Login = () => {
           const user = userCredential.user;
           const { uid, email, displayName, photoURL } = auth.currentUser;
           dispatch(addUser({uid: uid, email: email, displayName: displayName, photoURL: photoURL}));
-          navigate("/browse");
         })
         .catch((error) => {
           const errorCode = error.code;
