@@ -26,4 +26,4 @@ const useMovieTrailer = (movieId) => {
   
 };
 
-export default useMovieTrailer
+export default useMovieTrailer;

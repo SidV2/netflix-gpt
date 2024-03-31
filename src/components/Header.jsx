@@ -44,7 +44,11 @@ const Header = ({ hideYouTubeControls = false }) => {
     }
 
     return (
-        <div className={`w-screen absolute px-8 py-2  z-10 flex flex-col md:flex-row justify-between ${hideYouTubeControls ? 'bg-black' : 'bg-gradient-to-b from-black'} `}>
+        <div className={`w-screen absolute px-8 py-2 
+            z-10 flex flex-col md:flex-row justify-between ${hideYouTubeControls ? 'bg-black' : 'bg-gradient-to-b from-black'} 
+            items-center
+            `}
+        >
             <img className="w-44 mx-auto md:mx-0" src={LOGO} alt="logo" />
             {user &&
                 <div className="flex p-2 p-2 justify-between">
