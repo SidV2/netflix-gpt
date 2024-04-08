@@ -14,7 +14,7 @@ const Browse = () => {
 
   return (
     <div>
-      <Header />
+      <Header backGroundTransparent={false} />
       {showGptSearch ? (
         <GptSearch />
       ) : (

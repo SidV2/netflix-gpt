@@ -3,7 +3,7 @@ import { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import lang from "../utils/languageConstants";
 import { API_OPTIONS } from "../utils/constants";
-import { addGptMovieResult } from "../utils/gptSlice";
+import { addGptMovieResult, changeMoviesLoadingStatus } from "../utils/gptSlice";
 
 const GptSearchBar = () => {
   const dispatch = useDispatch();
@@ -24,6 +24,7 @@ const GptSearchBar = () => {
   };
 
   const handleGptSearchClick = async () => {
+    dispatch(changeMoviesLoadingStatus(true));
     console.log(searchText.current.value);
     // Make an API call to GPT API and get Movie Results
     console.log(process.env.REACT_APP_OPENAI_KE);
@@ -56,6 +57,7 @@ const GptSearchBar = () => {
 
     const tmdbResults = await Promise.all(promiseArray);
 
+    dispatch(changeMoviesLoadingStatus(false));
     console.log(tmdbResults);
 
     dispatch(

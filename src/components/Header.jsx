@@ -9,7 +9,7 @@ import { addUser, removeUser } from "../utils/userSlice";
 import { toggleGptSearchView } from "../utils/gptSlice";
 import { changeLanguage } from "../utils/configSlice";
 
-const Header = () => {
+const Header = ({ backGroundTransparent = true }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const user = useSelector((store) => store.user);
@@ -55,7 +55,8 @@ const Header = () => {
   };
 
   return (
-    <div className="absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-10 flex flex-col md:flex-row justify-between">
+    <div className={`absolute w-screen px-8 py-2  z-10 flex flex-col md:flex-row justify-between 
+      ${backGroundTransparent ? 'bg-gradient-to-b from-black' : 'bg-black'}`}>
       <img className="w-44 mx-auto md:mx-0" src={LOGO} alt="logo" />
       {user && (
         <div className="flex p-2 justify-between">
