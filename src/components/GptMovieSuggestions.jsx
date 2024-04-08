@@ -8,29 +8,31 @@ const GptMovieSuggestions = () => {
   if (!movieNames) return null;
 
   return (
-    moviesLoading ? (
-      <div className="p-4 m-4 bg-black text-white bg-opacity-90 flex flex-col items-center h-screen justify-center">
-        <CircularProgress 
-          color="error"
-          className="m-5"
-          size={"7rem"}
-        />
-        <p className="text-2xl">Loading Suggestions ...</p>
-      </div>
-    ) : (
-      <div className="p-4 m-4 bg-black text-white bg-opacity-90">
-        <div>
-          {movieNames.map((movieName, index) => (
-            <MovieList
-              key={movieName}
-              title={movieName}
-              movies={movieResults[index]}
+    <div className={'p-4 m-4 bg-black text-white bg-opacity-90'}>
+      {
+        moviesLoading ? (
+          <div className="flex flex-col items-center h-screen justify-center">
+            <CircularProgress
+              color="error"
+              className="m-5"
+              size={"7rem"}
             />
-          ))
-          }
-        </div >
-      </div >
-    )
+            <p className="text-2xl">Loading Suggestions ...</p>
+          </div>
+        ) : (
+          <div>
+            {movieNames.map((movieName, index) => (
+              <MovieList
+                key={movieName}
+                title={movieName}
+                movies={movieResults[index]}
+              />
+            ))
+            }
+          </div >
+        )
+      }
+    </div >
   );
 };
 export default GptMovieSuggestions;
